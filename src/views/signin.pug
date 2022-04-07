@@ -2,11 +2,14 @@ extends layout
 
 block content           
   main 
+    if error
+      .error
+        p= error
     div.center
       h2 Inicia sesión para comenzar
       form(action="" method="POST")
         div.txt-field
-          input#email(type="text" name="email" required="true")
+          input#email(type="email" name="email" required="true")
           span 
           label(for="email") Email
         div.txt-field
@@ -16,5 +19,5 @@ block content
         button.btn(type="submit") Iniciar sesion
 
         div.signup-link 
-          p ¿No tienes una cuenta? regístrate 
+          p ¿No tienes una cuenta? Regístrate 
             a(href="/auth/signup")  aquí 

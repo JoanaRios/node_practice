@@ -6,7 +6,7 @@ exports.signup_get = (req, res, next)=>{
 }
 exports.signup_post = [
     body('email', 'Introduce un email válido').trim().isEmail().escape(),
-    body('password', 'Introduce una contraseña de al menos 6 caracteres').trim().isLength({ min: 6 }).escape(),
+    body('password', 'Debe contener al menos 6 caracteres').trim().isLength({ min: 6 }).escape(),
     body('fullname', 'Introduce tu nombre completo').trim().isLength({ min: 1 }).escape(),
 
     (req, res, next)=>{
@@ -30,11 +30,17 @@ exports.signin_get = (req, res)=>{
     res.render('signin', {title: 'Iniciar sesion'});
 }
 exports.signin_post = [
+    (req, res, next)=>{
+        console.log(req.flash('error'));
+        next()
+    },
 
     passport.authenticate('local.signin', {
         successRedirect: '/',
-        failureRedirect: '/auth/signin'
+        failureRedirect: '/auth/signin',
+        failureFlash: true
     })
+
 ]
 exports.logOut = (req, res)=>{
     req.logOut();

@@ -17,10 +17,10 @@ require('./passportConfig')
 //middlewares
 app.use(session({
     secret: 'salon_app',
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     store: sqlsesion(database)
-}))
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(logger('dev'));
@@ -33,6 +33,7 @@ app.use(flash());
 app.use((req, res, next)=>{
     app.locals.success = req.flash('success');
     app.locals.message = req.flash('message');
+    app.locals.error = req.flash('error');
     if (req.user){
         app.locals.user = req.user[0];
     }

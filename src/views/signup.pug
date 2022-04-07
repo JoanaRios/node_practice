@@ -2,6 +2,9 @@ extends layout
 
 block content 
   main 
+    if error
+      .error
+        p= error
     .center
       h2 Regístrate para comenzar
       form(action="" method="POST")
