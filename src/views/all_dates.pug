@@ -1,0 +1,27 @@
+extends layout 
+
+block content 
+    main 
+        if dates_list.length
+            div.main-grid 
+                for date in dates_list 
+                    p.grid-item #{date.date}hs
+                    p.grid-item #{date.service}
+                    a.grid-item(href=`/dates/${date.id}/delete`)  Cancelar
+                    a.grid-item(href=`/dates/${date.id}/edit`)  Editar
+            //- responsive
+            for date in dates_list 
+                .date
+                    p.date-item #{date.service}
+                    span.material-icons.date-item keyboard_arrow_down
+                    .hidden
+                        .date-field
+                            p.hidden-item #{date.date}hs
+                        .links-field
+                            a.hidden-item(href=`/dates/${date.id}/delete`) Eliminar cita
+                            a.hidden-item(href=`/dates/${date.id}/edit`) Editar cita
+
+
+        else 
+            p Aún no has reservado ninguna cita. Reserva una 
+                a(href="/dates/create") aquí 

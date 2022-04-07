@@ -1,0 +1,16 @@
+extends layout 
+
+block content
+  if date 
+    main
+      .center.center-delete
+        h2 ¿Deseas cancelar esta cita?
+        p #[strong Servicio:] #{date.service}
+        p #[strong Fecha:] #{date.date}hs
+      
+        form(action="" method="POST")
+          input(type="hidden" value=date.id)
+          button.btn.btn-extra-margin(type="submit") Eliminar 
+  else 
+    h1 Error inesperado
+  

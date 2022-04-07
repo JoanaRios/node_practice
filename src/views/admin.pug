@@ -1,0 +1,18 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css/all_dates.css")
+        title= title
+    body 
+        if dates_list.length
+            div.main-grid 
+                for date in dates_list 
+                    p.grid-item #{date.date}hs
+                    p.grid-item #{date.service}
+                    p.grid-item #{date.paymentMethod}
+                    a(href=`/admin/${date.user.id}/user_detail`).grid-item #{date.user.fullname}
+        else 
+            p.empty-message Aún no hay ninguna cita

@@ -1,0 +1,42 @@
+
+extends layout 
+
+block content 
+    main
+        .center
+            form(method="POST" action="")
+                div.txt-field
+                    label.date-form-label(for="date") Fecha
+                    input#date(type="date" name="date" value=(unedefined===past_date ? "" : past_date.date) required="true")
+                div.txt-field 
+                        label.date-form-label(for="service") Servicio
+                        select#service(name="service" )
+                            for serv in services 
+                                if past_date
+                                    option(value=serv.name, selected=(serv.name==past_date.service ? 'selected' : false)) #{serv.name}
+                                else 
+                                    option(value=serv.name) #{serv.name} 
+                div.txt-field 
+                    label.date-form-label(for="hour") Hora 
+                    select#hour(name="hour")
+                        for hour in hours
+                            if past_date
+                                option(value= hour.hour selected= past_date.hour==hour.hour? 'selected':false) #{hour.hour}
+                            else 
+                                option(value=hour.hour) #{hour.hour} 
+
+
+                .txt-field 
+                    label.date-form-label(for="pay") Método de pago
+                    select#pay(name="paymentMethod" required="true" placeholder="Selecciona un método de pago")
+                        option(value="inLocal") Pago directo en el local 
+                        option(value="virtual") Pago virtual por adelantado
+                button.btn.btn-extra-margin(type="submit") Reservar    
+
+        if err
+            .errors
+                for error in err
+                    if error.msg
+                        .error!= error.msg
+                    else 
+                        .error #{error}

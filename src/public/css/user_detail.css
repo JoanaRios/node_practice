@@ -1,0 +1,16 @@
+table {
+  font-family: sans-serif;
+  border-collapse: collapse;
+  border-spacing: 10px;
+  width: 500px;
+  margin-right: auto;
+  margin-left: auto
+}
+th, td {
+  padding: 5px 10px;
+    border: 2px solid whitesmoke;
+}
+th{
+  background-color: #96D4D4;
+
+}

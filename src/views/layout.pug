@@ -1,0 +1,75 @@
+doctype html
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700&display=swap" rel="stylesheet")        
+        link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+        link(rel="stylesheet", href="/css/layout.css")
+        link(rel="stylesheet", href="/css/all_dates.css")
+        link(rel="stylesheet", href="/css/form.css")
+        
+        title= title
+    body
+        header 
+            span.header-icon.material-icons.md-48 reorder
+            h1 Salón de belleza V&J
+            nav.nav.nav-off
+                p.nav-p Acciones
+                    span.nav-icon.material-icons keyboard_arrow_down
+                ul.list 
+                    li.list-item
+                        a.link(href="#") Reservar una cita
+                            //- span.sub-menu-icon.material-icons keyboard_arrow_down
+                        ul.list.sub-menu
+                            li.list-item.sub-menu-item 
+                                a.link(href="/dates/Depilacion/create") Depilación
+                            li.list-item.sub-menu-item 
+                                a.link(href="/dates/cosmetologia/create") Cosmetología
+                            li.list-item.sub-menu-item 
+                                a.link(href="/dates/manicuria/create") Maicuria/pedicuria
+                            li.list-item.sub-menu-item 
+                                a.link(href="/dates/maquillaje/create") Maquillaje
+                            
+                    li.list-item
+                        a.link(href="/auth/signin") Iniciar sesion
+                    li.list-item
+                        a.link(href="/dates") Ver mis citas
+                    li.list-item
+                        a.link(href="#") Sobre nosotros
+                    if user 
+                        li.list-item
+                            a.link(href="/auth/logOut") Cerrar sesion
+
+    
+    block content
+    
+    footer
+        p footer content 
+        a.link(href="/") Home  
+
+    script(src="/scripts/layout.js" defer)
+    //- script(src="https://sdk.mercadopago.com/js/v2")
+    //- <script>
+    //- // Agrega credenciales de SDK
+    //- const mp = new MercadoPago("TEST-e66b70a4-d803-4c94-bb0e-b1274ceb1c6b", {
+    //-     locale: "es-AR"
+    //- });
+
+    //- // Inicializa el checkout
+    //- mp.checkout({
+    //-     preference: {
+    //-     id: "YOUR_PREFERENCE_ID",
+    //-     },
+    //-     render: {
+    //-     container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
+    //-     label: "Pagar", // Cambia el texto del botón de pago (opcional)
+    //-     },
+    //- });
+    //- </script>
+
+
+

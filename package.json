@@ -1,0 +1,47 @@
+{
+  "dependencies": {
+    "async": "^3.2.2",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.2",
+    "express-mysql": "^0.0.1",
+    "express-mysql-session": "^2.1.7",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "luxon": "^2.2.0",
+    "mercadopago": "^1.5.12",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemailer": "^6.7.2",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pug": "^3.0.2",
+    "session": "^0.1.0",
+    "timeago.js": "^4.0.2"
+  },
+  "name": "node_practice",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staNekoKawaii/node_practice.git"
+  },
+  "keywords": [
+    "love"
+  ],
+  "author": "joana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/staNekoKawaii/node_practice/issues"
+  },
+  "homepage": "https://github.com/staNekoKawaii/node_practice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

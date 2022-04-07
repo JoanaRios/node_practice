@@ -1,0 +1,22 @@
+extends layout 
+
+block content 
+  main 
+    .center
+      h2 Regístrate para comenzar
+      form(action="" method="POST")
+        .txt-field
+            input#email(type="email" name="email" value=(undefined===past_user ? "" : past_user.email) required="true")
+            label(for="email") Email
+        .txt-field
+          input#fullname(type="text" name ="fullname" value=(undefined===past_user ? "" : past_user.fullname) required="true")
+          label(for="fullname") Nombre completo 
+        .txt-field 
+          input#password(type="password" name="password" min="6" required="true")
+          label(for="password") Contraseña 
+        button.btn.btn-extra-margin(type="submit") Registrarse
+
+    if errors 
+      for error in errors
+        .alert
+          p!= error.msg
