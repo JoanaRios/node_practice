@@ -1,0 +1,17 @@
+@mixin message($type) {
+    display: flex;
+    position: absolute;
+    background-color: $secondary-color;
+    margin: 10px 20px;
+    border: 1px #aaa;
+    border-radius: 5px;
+    @if $type == 'error'{
+        border-left: 3px red;
+    }
+    @if $type=='success' {
+        border-left: 3px green;
+    }
+    @if $type=='message' {
+        border-left: 3px blue;
+    }
+}
