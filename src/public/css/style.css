@@ -1,0 +1,255 @@
+:root {
+  --columns: 4;
+  --column-gap: 6.67%;
+}
+@media (max-width: 440px) {
+  :root {
+    --columns: 12;
+    --column-gap: 2.27%;
+  }
+}
+@media (max-width: 440px) {
+  :root {
+    --columns: 12;
+    --column-gap: 2.19%;
+  }
+}
+
+.grid {
+  margin: 0 16px;
+}
+@media (max-width: 440px) {
+  .grid {
+    margin: 0 32px;
+  }
+}
+@media (max-width: 440px) {
+  .grid {
+    margin: 0 80px;
+  }
+}
+@media (max-width: 440px) {
+  .grid {
+    margin: 0 auto;
+    max-width: 1260px;
+  }
+}
+
+.grid,
+.subgrid {
+  display: grid;
+  -moz-column-gap: var(--column-gap);
+       column-gap: var(--column-gap);
+  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  background-color: white;
+  padding: 8px 5px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  border-left: 3px solid red;
+}
+
+.success {
+  position: absolute;
+  background-color: white;
+  padding: 8px 5px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  border-left: 3px solid green;
+}
+
+.message {
+  position: absolute;
+  background-color: white;
+  padding: 8px 5px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  border-left: 3px solid blue;
+}
+
+header {
+  position: relative;
+  height: 60px;
+  background-color: pink;
+}
+header h1 {
+  display: none;
+  color: white;
+}
+header .header-icon {
+  position: absolute;
+  color: white;
+  font-size: 36px;
+  left: 10px;
+  line-height: 60px;
+  cursor: pointer;
+}
+header .login {
+  position: absolute;
+  right: 5px;
+  height: 60px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+header .login span {
+  height: 60px;
+  vertical-align: middle;
+}
+header .login span a {
+  text-decoration: none;
+  color: white;
+}
+header .login .login-icon {
+  font-size: 24px;
+  color: white;
+  line-height: 60px;
+  margin-left: 5px;
+}
+header .actions {
+  display: none;
+}
+header .nav-on,
+header .nav-off {
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  top: 60px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0;
+  background-color: white;
+  color: pink;
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 10px;
+  transition: 0.5s;
+}
+header .nav-on .list,
+header .nav-off .list {
+  position: relative;
+  z-index: 200;
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  list-style: none;
+}
+header .nav-on .list .list-item,
+header .nav-off .list .list-item {
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: auto;
+  height: 50px;
+  text-align: left;
+}
+header .nav-on .list .list-item .link,
+header .nav-off .list .list-item .link {
+  text-decoration: none;
+  color: #333;
+  line-height: 50px;
+}
+header .nav-on .list .sub-menu,
+header .nav-off .list .sub-menu {
+  display: none;
+}
+header .nav-on .list .sub-menu .sub-menu-item,
+header .nav-off .list .sub-menu .sub-menu-item {
+  position: relative;
+}
+header .nav-on .list .sub-menu--visible,
+header .nav-off .list .sub-menu--visible {
+  position: absolute;
+  top: -5px;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 10px;
+  transition: 0.5s;
+  display: initial;
+  right: -150px;
+}
+header .nav-off {
+  left: -500px;
+  transition: 0.5s;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: pink;
+  color: white;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    height: 80px;
+  }
+  header h1 {
+    display: initial;
+    line-height: 80px;
+    margin-left: 5px;
+    color: white;
+  }
+  header .header-icon {
+    display: none;
+  }
+  header .login {
+    position: absolute;
+    right: 160px;
+    top: 0;
+    width: 150px;
+    height: 80px;
+    text-align: center;
+  }
+  header .login span {
+    line-height: 80px;
+  }
+  header .actions {
+    display: initial;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 150px;
+    height: 80px;
+    text-align: center;
+  }
+  header .actions p {
+    display: inline;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  header .actions span {
+    height: 80px;
+    vertical-align: middle;
+    color: white;
+  }
+  header .actions .material-icons {
+    line-height: 80px;
+  }
+  header .nav-off {
+    position: absolute;
+    top: 80px;
+    left: 100px;
+  }
+  header .nav-off .sub-menu {
+    display: initial;
+    position: absolute;
+    left: -500px;
+  }
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto", san-serif;
+  background-color: white;
+}
+
+main {
+  min-height: 100vh;
+  z-index: 0;
+}/*# sourceMappingURL=style.css.map */

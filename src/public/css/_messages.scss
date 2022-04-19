@@ -1,17 +1,29 @@
+@use "globals" as g;
+
 @mixin message($type) {
-    display: flex;
+    // display: flex;
     position: absolute;
-    background-color: $secondary-color;
-    margin: 10px 20px;
-    border: 1px #aaa;
+    background-color: g.$secondary-color;
+    padding: 8px 5px;
+    border: 1px solid #aaa;
     border-radius: 5px;
     @if $type == 'error'{
-        border-left: 3px red;
+        border-left: 3px solid red;
     }
     @if $type=='success' {
-        border-left: 3px green;
+        border-left: 3px solid green;
     }
     @if $type=='message' {
-        border-left: 3px blue;
+        border-left: 3px solid blue;
     }
+}
+
+.error {
+    @include message(error)
+}
+.success {
+    @include message(success)
+}
+.message {
+    @include message(message)
 }

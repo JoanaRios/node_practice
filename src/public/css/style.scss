@@ -1,8 +1,17 @@
-@use "grillas.scss";
-@use "globals.scss";
-@use "messages.scss";
-@use "forms.scss";
+@use "globals" as g;
+@forward "grids";
+@forward "messages";
+@forward "forms";
+@forward "layout";
 
-h1{
-    color: red;
+body {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: g.$primary-font;
+    background-color: g.$secondary-color;
+}
+
+main {
+    min-height: 100vh;
+    z-index: 0;
 }
