@@ -8,19 +8,22 @@ html(lang="es")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700&display=swap" rel="stylesheet")        
         link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-        //- link(rel="stylesheet", href="/css/layout.css")
-        //- link(rel="stylesheet", href="/css/all_dates.css")
-        //- link(rel="stylesheet", href="/css/form.css")
-        link(rel="stylesheet", href="/css/style.scss")
+        link(rel="stylesheet" type="text/css" href="/css/style.css")
         
         title= title
     body
         header 
             span.header-icon.material-icons.md-48 reorder
-            h1 Salón de belleza V&J
+            if !user
+                .login 
+                    span
+                        a(href="/auth/signin") Iniciar sesion
+                    span.material-icons.login-icon account_circle
+            .actions
+                span
+                    p Acciones
+                span.nav-icon.material-icons keyboard_arrow_down
             nav.nav.nav-off
-                p.nav-p Acciones
-                    span.nav-icon.material-icons keyboard_arrow_down
                 ul.list 
                     li.list-item
                         a.link(href="#") Reservar una cita
@@ -34,9 +37,6 @@ html(lang="es")
                                 a.link(href="/dates/manicuria/create") Maicuria/pedicuria
                             li.list-item.sub-menu-item 
                                 a.link(href="/dates/maquillaje/create") Maquillaje
-                            
-                    li.list-item
-                        a.link(href="/auth/signin") Iniciar sesion
                     li.list-item
                         a.link(href="/dates") Ver mis citas
                     li.list-item
@@ -47,30 +47,7 @@ html(lang="es")
 
     
     block content
-    
-    footer
-        p footer content 
-        a.link(href="/") Home  
-
     script(src="/scripts/layout.js" defer)
-    //- script(src="https://sdk.mercadopago.com/js/v2")
-    //- <script>
-    //- // Agrega credenciales de SDK
-    //- const mp = new MercadoPago("TEST-e66b70a4-d803-4c94-bb0e-b1274ceb1c6b", {
-    //-     locale: "es-AR"
-    //- });
-
-    //- // Inicializa el checkout
-    //- mp.checkout({
-    //-     preference: {
-    //-     id: "YOUR_PREFERENCE_ID",
-    //-     },
-    //-     render: {
-    //-     container: ".cho-container", // Indica el nombre de la clase donde se mostrará el botón de pago
-    //-     label: "Pagar", // Cambia el texto del botón de pago (opcional)
-    //-     },
-    //- });
-    //- </script>
 
 
 
