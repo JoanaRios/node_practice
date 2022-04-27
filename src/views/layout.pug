@@ -9,45 +9,46 @@ html(lang="es")
         link(href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700&display=swap" rel="stylesheet")        
         link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
         link(rel="stylesheet" type="text/css" href="/css/style.css")
-        
         title= title
     body
         header 
-            span.header-icon.material-icons.md-48 reorder
-            if !user
-                .login 
-                    span
-                        a(href="/auth/signin") Iniciar sesion
-                    span.material-icons.login-icon account_circle
-            .actions
-                span
-                    p Acciones
-                span.nav-icon.material-icons keyboard_arrow_down
-            nav.nav.nav-off
-                ul.list 
-                    li.list-item
-                        a.link(href="#") Reservar una cita
-                            //- span.sub-menu-icon.material-icons keyboard_arrow_down
-                        ul.list.sub-menu
-                            li.list-item.sub-menu-item 
-                                a.link(href="/dates/Depilacion/create") Depilación
-                            li.list-item.sub-menu-item 
-                                a.link(href="/dates/cosmetologia/create") Cosmetología
-                            li.list-item.sub-menu-item 
-                                a.link(href="/dates/manicuria/create") Maicuria/pedicuria
-                            li.list-item.sub-menu-item 
-                                a.link(href="/dates/maquillaje/create") Maquillaje
-                    li.list-item
-                        a.link(href="/dates") Ver mis citas
-                    li.list-item
-                        a.link(href="#") Sobre nosotros
-                    if user 
-                        li.list-item
-                            a.link(href="/auth/logOut") Cerrar sesion
+            .header_top 
+                .logo 
+                    img(src="/images/Logo.png", alt="logo empresa")
+                .phrase 
+                    p "El lugar donde resaltas tu belleza natural"
+            
+            .container_menu 
+                span.material-icons.reorder#reorder reorder
+                .menu 
+                    nav
+                        ul#nav  
+                            li.home.reorder
+                                span.material-icons.home#home home
+                            if !user
+                                li
+                                    a(href="#") Iniciar sesión
+                            li
+                                a(href="#") Pedir una cita
+                                ul 
+                                    li
+                                        a(href="#") masajes
+                                    li
+                                        a(href="#") depilación
+                                    li
+                                        a(href="#") maquillaje
+                                    li
+                                        a(href="#") cosmetología
+                                    li
+                                        a(href="#") manicura/pedicura
 
-    
-    block content
-    script(src="/scripts/layout.js" defer)
+                            li
+                                a(href="") ver mis citas
+                            li
+                                a(href="") sobre nosotros
+                            if user
+                                li
+                                    a(href="") cerrar sesión
 
-
-
+    block content 
+    script(src= '/scripts/layout.js' defer)

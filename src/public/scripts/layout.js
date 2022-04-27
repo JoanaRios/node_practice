@@ -1,22 +1,13 @@
-const headerIcon = document.querySelector('.header-icon');
-const nav = document.querySelector('.nav');
+//---------------------------menu responsive animations------------------------
+const reorderIcon = document.getElementById('reorder');
+const nav = document.getElementById('nav');
 
-headerIcon.addEventListener('click', () =>{
-    if (nav.classList.contains('nav-off')){
-        nav.classList.remove('nav-off');
-        nav.classList.add('nav-on');
-    } else {
-        nav.classList.remove('nav-on');
-        nav.classList.add('nav-off');
-    }
+reorderIcon.addEventListener('click', ()=>{
+    nav.classList.toggle('on')
 });
 
-const pedirCita = document.querySelector('.list-item');
-const subMenu = document.querySelector('.sub-menu');
 
-pedirCita.addEventListener('click', ()=>{
-    subMenu.classList.toggle('sub-menu--visible')
-})
+//----------------------------dates responsive----------------------
 const date = document.querySelectorAll('.date');
 const hidden = document.querySelectorAll('.hidden');
 

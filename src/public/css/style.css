@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
 :root {
   --columns: 4;
   --column-gap: 6.67%;
@@ -71,175 +72,194 @@
   border-left: 3px solid blue;
 }
 
-header {
-  position: relative;
-  height: 60px;
-  background-color: pink;
-}
-header h1 {
-  display: none;
-  color: white;
-}
-header .header-icon {
-  position: absolute;
-  color: white;
-  font-size: 36px;
-  left: 10px;
-  line-height: 60px;
-  cursor: pointer;
-}
-header .login {
-  position: absolute;
-  right: 5px;
-  height: 60px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-header .login span {
-  height: 60px;
-  vertical-align: middle;
-}
-header .login span a {
-  text-decoration: none;
-  color: white;
-}
-header .login .login-icon {
-  font-size: 24px;
-  color: white;
-  line-height: 60px;
-  margin-left: 5px;
-}
-header .actions {
-  display: none;
-}
-header .nav-on,
-header .nav-off {
-  position: absolute;
-  z-index: 200;
-  left: 0;
-  top: 60px;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 0;
-  background-color: white;
-  color: pink;
-  box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 10px;
-  transition: 0.5s;
-}
-header .nav-on .list,
-header .nav-off .list {
-  position: relative;
-  z-index: 200;
+* {
   margin: 0;
   padding: 0;
-  width: 150px;
-  list-style: none;
-}
-header .nav-on .list .list-item,
-header .nav-off .list .list-item {
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: auto;
-  height: 50px;
-  text-align: left;
-}
-header .nav-on .list .list-item .link,
-header .nav-off .list .list-item .link {
+  box-sizing: border-box;
   text-decoration: none;
-  color: #333;
-  line-height: 50px;
 }
-header .nav-on .list .sub-menu,
-header .nav-off .list .sub-menu {
+
+header {
+  width: 100%;
+  position: relative;
+  background-color: pink;
+}
+
+.reorder {
   display: none;
 }
-header .nav-on .list .sub-menu .sub-menu-item,
-header .nav-off .list .sub-menu .sub-menu-item {
+
+.header_top {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.header_top .logo img {
+  width: 150px;
+}
+.header_top .phrase {
+  font-family: "Lobster Two", cursive;
+  font-size: 3.2rem;
+  color: #333;
+  padding: 10px;
+}
+
+.container_menu {
+  width: 100%;
+  height: 70px;
+  background-color: pink;
+  padding: 0px 20px;
+}
+.container_menu .menu {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+}
+.container_menu .menu nav {
+  height: 100%;
+}
+.container_menu .menu nav ul li {
+  height: 100%;
+  list-style-type: none;
   position: relative;
 }
-header .nav-on .list .sub-menu--visible,
-header .nav-off .list .sub-menu--visible {
-  position: absolute;
-  top: -5px;
-  background-color: var(--white);
-  box-shadow: rgba(0, 0, 0, 0.24) 5px 5px 10px;
-  transition: 0.5s;
+.container_menu .menu nav ul .home {
   display: initial;
-  right: -150px;
-}
-header .nav-off {
-  left: -500px;
-  transition: 0.5s;
-}
-
-footer {
+  position: absolute;
+  left: 10px;
+  height: 70px;
   display: flex;
-  justify-content: space-evenly;
-  background-color: pink;
-  color: white;
+  align-items: center;
+  color: #fff;
+}
+.container_menu .menu nav ul .home span {
+  font-size: 36px;
+}
+.container_menu .menu nav ul li ul {
+  position: absolute;
+  top: 90px;
+  left: -5px;
+  z-index: 100;
+  width: 200px;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  visibility: hidden;
+  opacity: 0;
+}
+.container_menu .menu nav ul li:hover ul {
+  visibility: visible;
+  opacity: 1;
+  top: 70px;
+  transition: all 0.5s ease;
+}
+.container_menu .menu nav ul li ul::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+}
+.container_menu .menu nav ul li ul li a {
+  display: block;
+  color: #333;
   width: 100%;
+  padding: 6px;
+  padding-left: 14px;
+  margin-top: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+}
+.container_menu .menu nav > ul {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+}
+.container_menu .menu nav > ul > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px 14px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: all 300ms ease;
+}
+.container_menu .menu nav > ul > li > a:hover {
+  transform: scale(1.1);
+  background-color: rgb(255, 144, 162);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (min-width: 700px) {
-  header {
-    height: 80px;
-  }
-  header h1 {
-    display: initial;
-    line-height: 80px;
-    margin-left: 5px;
-    color: white;
-  }
-  header .header-icon {
+@media screen and (max-width: 720px) {
+  #home,
+.header_top {
     display: none;
   }
-  header .login {
-    position: absolute;
-    right: 160px;
-    top: 0;
-    width: 150px;
-    height: 80px;
-    text-align: center;
+
+  .container_menu {
+    padding: 0;
   }
-  header .login span {
-    line-height: 80px;
-  }
-  header .actions {
+  .container_menu #reorder {
     display: initial;
     position: absolute;
-    top: 0;
-    right: 5px;
-    width: 150px;
-    height: 80px;
-    text-align: center;
+    left: 10px;
+    font-size: 34px;
+    color: #fff;
+    height: 70px;
+    line-height: 70px;
   }
-  header .actions p {
-    display: inline;
-    font-weight: 500;
-    cursor: pointer;
+  .container_menu .menu nav ul .reorder {
+    position: initial;
   }
-  header .actions span {
-    height: 80px;
-    vertical-align: middle;
-    color: white;
-  }
-  header .actions .material-icons {
-    line-height: 80px;
-  }
-  header .nav-off {
-    position: absolute;
-    top: 80px;
-    left: 100px;
-  }
-  header .nav-off .sub-menu {
+  .container_menu .menu nav ul #reorder {
     display: initial;
-    position: absolute;
-    left: -500px;
+    position: inherit;
+  }
+  .container_menu .menu nav ul li ul {
+    left: 110px;
+  }
+  .container_menu .menu nav ul li:hover ul {
+    top: 66px;
+  }
+  .container_menu .menu nav > ul {
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    height: 0;
+    background-color: pink;
+    transition: all 300ms ease;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .container_menu .menu nav > ul.on {
+    height: 300px;
+    opacity: 1;
+    visibility: visible;
+  }
+  .container_menu .menu nav > ul > li:first-child {
+    display: none;
+  }
+  .container_menu .menu nav > ul > li > a {
+    justify-content: left;
+  }
+  .container_menu .menu nav > ul > li > a:hover {
+    transform: scale(1);
   }
 }
 body {
