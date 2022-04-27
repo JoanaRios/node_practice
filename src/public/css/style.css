@@ -228,11 +228,8 @@ header {
     display: initial;
     position: inherit;
   }
-  .container_menu .menu nav ul li ul {
-    left: 110px;
-  }
   .container_menu .menu nav ul li:hover ul {
-    top: 66px;
+    top: 75px;
   }
   .container_menu .menu nav > ul {
     flex-direction: column;
